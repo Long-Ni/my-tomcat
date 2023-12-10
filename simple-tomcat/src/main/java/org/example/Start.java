@@ -172,7 +172,7 @@ public class Start {
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }
-        logger.info("jerrymouse http server was shutdown.");
+        logger.info("Simple-Tomcat http server was shutdown.");
     }
 
     // return classes and lib path:

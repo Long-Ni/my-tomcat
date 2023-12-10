@@ -28,7 +28,7 @@ public class HttpConnector implements HttpHandler, AutoCloseable {
     final Duration stopDelay = Duration.ofSeconds(5);
 
     public HttpConnector(Config config, String webRoot, Executor executor, ClassLoader classLoader, List<Class<?>> autoScannedClasses) throws IOException {
-        logger.info("starting jerrymouse http server at {}:{}...", config.server.host, config.server.port);
+        logger.info("starting Simple-Tomcat http server at {}:{}...", config.server.host, config.server.port);
         this.config = config;
         this.classLoader = classLoader;
 
@@ -43,7 +43,7 @@ public class HttpConnector implements HttpHandler, AutoCloseable {
         this.httpServer = HttpServer.create(new InetSocketAddress(config.server.host, config.server.port), config.server.backlog, "/", this);
         this.httpServer.setExecutor(executor);
         this.httpServer.start();
-        logger.info("jerrymouse http server started at {}:{}...", config.server.host, config.server.port);
+        logger.info("Simple-Tomcat http server started at {}:{}...", config.server.host, config.server.port);
     }
 
     @Override
